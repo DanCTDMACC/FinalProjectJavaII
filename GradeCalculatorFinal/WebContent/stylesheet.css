@@ -1,0 +1,81 @@
+@CHARSET "ISO-8859-1";
+
+/*
+	Final Project
+	Author: Danh Tran
+*/
+
+/* Universal selector */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #cccccc;
+}
+
+/* center align */
+#container {
+	width: 900px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+/* header styles */
+header {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+	word-spacing: 0.9em;
+}
+
+/* Navigation styles */
+nav {
+	display: block;
+	text-align: center;
+	background-color: #00ff00;
+}
+
+nav li{
+	display: inline;
+	list-style-type: none;
+}
+
+nav a {
+	padding: 5px;
+	background-color: white;
+	color: blue;
+	text-decoration: none;
+}
+
+/* footer styles */
+footer {
+	display: block;
+	text-align: center;
+	background-color: #00ff00;
+	clear: both;
+}
+
+input.button {
+	color: #00CC00;
+	width: 150px;
+}
+
+.error {
+	color: red;
+}
+
+table.table {
+	border: solid 1px;
+	border-collapse: collapse;
+}
+
+.table td, .table th	 {
+	border: solid 1px;
+}
+
+td, th {
+	padding: 0 5px;
+}
