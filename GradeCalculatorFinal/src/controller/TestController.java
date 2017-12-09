@@ -7,9 +7,8 @@ import model.AccountDaoInDatabase;
 public class TestController {
 	
 	public static void main(String[] args) {
-		AccountDao dao = new AccountDaoInDatabase();
-		Account accN = dao.findAccountById(3);
+		GradeDaoInDatabase dao = new GradeDaoInDatabase();
 		
-		System.out.println(accN);
+		System.out.println(dao.findGradeAverageByAccountId(1));
 	}
 }
