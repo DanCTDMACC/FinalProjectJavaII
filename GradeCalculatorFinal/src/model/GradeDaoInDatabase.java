@@ -136,4 +136,28 @@ public class GradeDaoInDatabase implements GradeDao {
 		return gradeFound;
 	}
 
+	public double findGradeAverageByAccountId(int accountIdToFind) {
+		// Create EntityManager from the factory to work with database.
+		EntityManager eManager = emFactory.createEntityManager();
+		double result = 0;
+		
+		// Start connecting with the database.
+		eManager.getTransaction().begin();
+		
+		// Find all grades by account id.
+		TypedQuery<Double> typedQuery = 
+				eManager.createQuery("SELECT SUM(gr.credits * gt.pointindex) / SUM(gr.credits) FROM Grade gr, GradeType gt "
+				+ "WHERE gr.accountid = :accountid AND gr.gradetypeid = gt.id", Double.class);
+		typedQuery.setParameter("accountid", accountIdToFind);
+		try {
+			result = (Double) typedQuery.getSingleResult();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			// Clean the memory.
+			eManager.close();
+		}
+		return result;
+	}
+
 }
